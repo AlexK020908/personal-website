@@ -1,0 +1,239 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+% \urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% % Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small #1 \vspace{-2pt}
+}
+
+\newcommand{\resumeSubheadingEdu}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Zixuan Kang} \\ \vspace{1pt}
+    \small {\underline{778-682-7953}} $|$ {\underline{zixuank0287@outlook.com}} $|$ 
+    \underline{\href{https://www.linkedin.com/in/alex-k-315745229/}{LinkedIn}}
+
+    
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+      \resumeSubheadingEdu
+      {Columbia}{New York, United States}
+      {Masters of Computer Science}{Expected to start Sept 2026}
+    \resumeSubheadingEdu
+      {University of British Columbia}{Vancouver, BC}
+      {Bachelor of Computer Science}{Sep. 2020 -- May 2026}
+      \resumeItemListStart
+        \resumeItem{GPA: 3.76 / 4.0}
+        \resumeItem{Relevant Coursework: Software Engineering, Computer Hardware and Operating Systems, Intermediate Algorithm Design, Advanced Algorithms Design, Introduction to Relational Databases, Advanced Relational Databases, Machine Learning and Data Mining, Advanced Machine Learning, Parallel Computation}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+
+
+%-----------EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+
+
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+\resumeProjectHeading
+  {\textbf{Data Science Intern, Siemens, Beijing China} $|$ \emph{Python, PySpark, Pandas, Numpy, ML, AWS}}{May - September 2025}{}{}
+  \resumeItemListStart
+      \resumeItem{Implemented business project name de-duplication algorithm leveraging \textbf{cosine similarity, fuzzy matching techniques}, and domain-specific knowledge integration, eliminating manual work completely}
+    \resumeItem{Improved F1 score by \textbf{15\%} and accuracy by \textbf{12\%} by building a business classification system using \textbf{transformer fine-tuning, LightGBM, focal loss, and synthetic sampling} on business scope and industry data}
+    \resumeItem{Built \textbf{scalable} data processing pipeline with \textbf{Pyspark and NumPy} to consolidate \textbf{50M+} customer pricing records from service requests and compute annual product- and customer-level price change metrics}
+    \resumeItem{Developed anomaly detection system using \textbf{Variational Autoencoders} in Keras for customer pricing records, executing comprehensive data \textbf{preprocessing} and \textbf{sampling-based validation} to assess model performance}
+    \resumeItem{Built automated PDF processing pipeline using \textbf{Tesseract OCR} with \textbf{text-position extraction, spatial alignment and binary search} to locate contract numbers and tabular content, eliminating manual data entry}
+  \resumeItemListEnd
+  
+\resumeProjectHeading
+    {\textbf{Co-Founder, Ace Automations, Remote } $|$ \emph{Rust, parallelization, TCP/UDP, security, SQL}}{Dec 2023 - Jan 2025}{}{}
+    \resumeItemListStart
+        \resumeItem{Spearheaded development of high-performance trading software on decentralized exchanges}
+        \resumeItem{Leveraged thread-pool to develop a \textbf{multithreaded transactional handler}, processing buy/sell requests in \textbf{under 100ms}, achieving up to \textbf{20x} faster performance compared to manual executions}
+        \resumeItem{Utilized \textbf{Tokio Console} to identify and debug \textbf{software hangs}, \textbf{deadlocks}, and \textbf{performance bottlenecks} by monitoring threads, task lifecycles, and slow execution speeds}
+        \resumeItem{Designed scalable messaging protocol using \textbf{gRPC} and \textbf{custom protocol buffers} to stream across distributed clients}
+        \resumeItem{Implemented statistical detection algorithm to identify anomalies in asset launch patterns, enhancing clients' safety}
+        \resumeItem{Designed AWS workflow utilizing \textbf{Lambda, ECS}, and \textbf{VPC} to handle high loads and ensure seamless performance}
+
+
+\resumeItemListEnd
+
+\resumeProjectHeading
+    {\textbf{Software Developer Intern, LMI Technologies, Burnaby} $|$ \emph{C++/C, Python}}{Jan -- September 2023}{}{}
+  \resumeItemListStart
+    \resumeItem{Developed \textbf{C++ multi-threaded} solution reducing sensor startup time by \textbf{40\%}}
+    \resumeItem{Reduced binary size of build artifacts by \textbf{20MB} through resolution of technical debt}
+    \resumeItem{Maintained build server stability by eliminating \textbf{intermittent} build failures in multi-threaded environments}
+    \resumeItem{Improved \textbf{Python} scripts to eliminate upgrade hangs, enhancing software reliability}
+    \resumeItem{Automated testing in \textbf{C++}, creating mocks that increased extensibility and confidence in code}
+  \resumeItemListEnd
+
+
+
+
+  \resumeSubHeadingListEnd
+\section{Research Experience}
+    \resumeSubHeadingListStart
+            
+        \resumeProjectHeading
+          {\textbf{Railway AI Video Surveillance Researcher} $|$ \emph{Supervised by Prof. Zhang, Peking}}{June - November 2025}{}{}
+          \resumeItemListStart
+            \resumeItem{Fine-tuned \textbf{multimodal LLMs} with \textbf{LoRA adapters} and \textbf{sliding-window temporal sampling}, detecting mudslides from real-time railway video and sensor streams}
+            \resumeItem{Engineered \textbf{environmental condition augmentations}(rain intensity, fog density, debris), cutting false positives and raising model recall under adverse weather}
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{Algoverse Researcher} $|$ \emph{Mentored by Shreyas from Amazon, Kevin Zhu from UC-Berkeley}}{June - November 2025}{}{}
+          \resumeItemListStart
+            \resumeItem{Extended \textbf{Uncertainty of Thoughts (UoT)} with \textbf{Bayesian prior estimation} and \textbf{multibranching}, generalizing past binary entropy-based splitting}
+            \resumeItem{Implemented \textbf{likelihood caching} over sentence-clustered questions, cutting redundant model calls}
+            \resumeItem{Accepted to \textbf{Agentic AI in the Wild} workshop, \textbf{ICLR 2026}}
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{
+    \item{
+      \textbf{Languages}{: C++, Rust, Python, TypeScript/JavaScript, Java, SQL/NoSQL, x86-64, CUDA, Erlang, PHP} \\
+      \textbf{Machine Learning}{: Transformers, LoRA fine-tuning, VAEs, CNNs, SGD, MLE/MAP estimation, PCA/t-SNE} \\
+      \textbf{Frameworks}{: PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, PySpark, OpenCV, React Native, Next.js} \\
+      \textbf{Infrastructure}{: Kafka, Docker, Terraform, AWS (Lambda, ECS, VPC), PostgreSQL, Redis, gRPC/protobuf} \\
+      \textbf{AI Tooling}{: Claude Code, Codex, Cursor, MCP servers, agent skills, prompt \& context engineering} \\
+      \textbf{Interests}{: LLM reasoning \& alignment, blockchain \& DeFi, fintech, vision research, data pipelines}
+    }
+  }
+\end{itemize}
+
+
+
+%-------------------------------------------
+\end{document}

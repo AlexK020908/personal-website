@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0c;
+  --color-panel: #101014;
+  --color-panel2: #16161b;
+  --color-line: #242429;
+  --color-line2: #33333b;
+  --color-fg: #e8e8ee;
+  --color-muted: #8e8e9c;
+  --color-dim: #7e7e94;
+  --color-violet: #9d7bff;
+  --color-lav: #c9b8ff;
+  --color-pink: #ff6ec7;
+
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: var(--color-ink);
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-violet);
+  color: var(--color-ink);
+}
+
+/* --- scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line2);
+  border: 2px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-violet);
+}
+
+/* --- reveal on scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .cursor-blink {
+    animation: none;
+  }
+}
+
+/* --- blinking terminal cursor --- */
+.cursor-blink {
+  animation: blink 1.05s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* --- decorative dot grid --- */
+.dotgrid {
+  background-image: radial-gradient(var(--color-line2) 1px, transparent 1px);
+  background-size: 11px 11px;
+}
+
+/* --- faint scanline / noise wash over the page --- */
+.vignette {
+  background: radial-gradient(
+    120% 80% at 50% -10%,
+    rgba(157, 123, 255, 0.09) 0%,
+    transparent 60%
+  );
+}
+
+/* --- link underline sweep --- */
+.sweep {
+  background-image: linear-gradient(var(--color-violet), var(--color-violet));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sweep:hover {
+  background-size: 100% 1px;
+}
