@@ -49,7 +49,6 @@ export const projects: Project[] = [
     stack: "Next.js 16 · TypeScript · Supabase / pgvector · Claude · Voyage AI",
     blurb:
       "The fastest way to keep up with AI. One brief instead of 130 feeds — every story appears once, ranked by how many outlets covered it rather than by engagement, so it can't be gamed.",
-    live: "https://stackbrief.tech/",
     repo: "https://github.com/AlexK020908/AI-News-Ranker",
     terminal: {
       cmd: "stackbrief ingest --since 15m",
