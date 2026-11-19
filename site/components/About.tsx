@@ -1,4 +1,4 @@
-import { education, site } from "@/lib/data";
+import { coursework, education, site } from "@/lib/data";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
@@ -21,9 +21,10 @@ export default function About() {
               <p>
                 Hey — I&apos;m Alex.{" "}
                 <span className="text-fg">Zixuan Kang</span> is my legal name,
-                so that&apos;s what shows up on my email and paperwork. I just
-                finished my CS degree at UBC and start my Master&apos;s at
-                Columbia this September. Most of what I build lands in{" "}
+                so that&apos;s what shows up on my email and paperwork. I
+                finished my CS degree at UBC and I&apos;m now doing my
+                Master&apos;s at Columbia on the machine learning track. Most of
+                what I build lands in{" "}
                 <span className="text-fg">fintech, crypto and AI</span> —
                 systems where being fast and being correct are the same
                 requirement.
@@ -47,10 +48,11 @@ export default function About() {
                 >
                   Fizz.bot
                 </a>{" "}
-                — all of crypto on your fingertips. Spot, perps, memecoins and
-                prediction markets in one place, with a social layer that puts
-                real skin in the game. The web app is live today; we&apos;re
-                pivoting to mobile next.
+                — all of crypto at your fingertips. More on that{" "}
+                <a href="#building" className="sweep text-violet">
+                  above
+                </a>
+                , including what a VC rejection taught us.
               </p>
               <p>
                 I keep coming back because I genuinely love this — I trade
@@ -86,13 +88,15 @@ export default function About() {
               ))}
             </ul>
 
-            <div className="border-t border-line px-5 py-5">
-              <p className="text-xs text-dim">relevant coursework</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-muted">
-                Advanced Algorithm Design · Advanced Machine Learning · Parallel
-                Computation · Computer Hardware &amp; Operating Systems ·
-                Advanced Relational Databases · Software Engineering
-              </p>
+            <div className="space-y-4 border-t border-line px-5 py-5">
+              {coursework.map((c) => (
+                <div key={c.label}>
+                  <p className="text-xs text-dim">{c.label}</p>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-muted">
+                    {c.items.join(" · ")}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>

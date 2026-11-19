@@ -17,6 +17,8 @@ export const metadata: Metadata = {
     "LLM research",
     "UBC",
     "Columbia",
+    "Columbia MSCS",
+    "Fizz.bot",
     "Clawlet",
     "StackBrief",
     "infra-designer",

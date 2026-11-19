@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Building from "@/components/Building";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
@@ -30,6 +31,7 @@ export default function Page() {
       <main className="relative z-10 lg:pl-14">
         <Hero />
         <Quote />
+        <Building />
         <Projects />
         <Experience />
         <Skills />

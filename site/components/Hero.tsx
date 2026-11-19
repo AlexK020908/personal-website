@@ -36,10 +36,11 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted sm:text-base">
-            CS grad from UBC, incoming MSCS at Columbia. I build systems that move
-            money, models and infrastructure — low-latency Rust trading engines,
-            transformer fine-tuning, data pipelines over 50M+ records, and
-            agents that ship real work.
+            MS CS student at Columbia on the machine learning track, CS grad
+            from UBC. I build systems that move money, models and
+            infrastructure — low-latency Rust trading engines, transformer
+            fine-tuning, data pipelines over 50M+ records, and agents that ship
+            real work.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">

@@ -5,6 +5,7 @@ import { CloseIcon, MenuIcon } from "./icons";
 
 const links = [
   { id: "home", label: "home" },
+  { id: "building", label: "building" },
   { id: "projects", label: "projects" },
   { id: "experience", label: "experience" },
   { id: "skills", label: "skills" },
@@ -71,7 +72,7 @@ export default function Nav() {
           <span className="text-fg">alex-kang</span>
         </a>
 
-        <ul className="hidden items-center gap-6 text-sm md:flex lg:gap-7">
+        <ul className="hidden items-center gap-6 text-sm lg:flex xl:gap-7">
           {links.map((l) => {
             const on = active === l.id;
             return (
@@ -98,7 +99,7 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
-          className="-mr-2.5 p-2.5 text-fg md:hidden"
+          className="-mr-2.5 p-2.5 text-fg lg:hidden"
         >
           {open ? (
             <CloseIcon className="h-6 w-6" />
@@ -110,7 +111,7 @@ export default function Nav() {
 
       {/* mobile drawer */}
       <div
-        className={`fixed inset-x-0 top-16 bottom-0 z-50 border-t border-line bg-ink px-5 pt-8 transition-[opacity,transform] duration-300 md:hidden ${
+        className={`fixed inset-x-0 top-16 bottom-0 z-50 border-t border-line bg-ink px-5 pt-8 transition-[opacity,transform] duration-300 lg:hidden ${
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-3 opacity-0"

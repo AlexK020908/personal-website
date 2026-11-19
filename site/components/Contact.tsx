@@ -29,10 +29,11 @@ export default function Contact() {
         <Reveal>
           <div className="h-full border border-line bg-panel p-6 sm:p-7">
             <p className="text-sm leading-relaxed text-muted">
-              I&apos;m open to new grad and internship roles, research
+              I&apos;m open to summer 2027 internships, research
               collaborations, and anything at the intersection of ML and
-              low-latency systems. The fastest way to reach me is email — I
-              reply to everything.
+              low-latency systems — and if you&apos;re building in crypto,
+              I&apos;d love to compare notes. The fastest way to reach me is
+              email — I reply to everything.
             </p>
             <p className="mt-4 text-[13px] leading-relaxed text-muted">
               Heads up: my email is under{" "}
@@ -82,8 +83,8 @@ export default function Contact() {
                   based in
                 </span>
                 <span className="min-w-0 flex-1 text-[13px] text-muted">
-                  Vancouver, BC <span className="text-dim">→</span> New York,
-                  NY <span className="text-dim">(Sep 2026)</span>
+                  New York, NY{" "}
+                  <span className="text-dim">(from Vancouver, BC)</span>
                 </span>
               </li>
             </ul>

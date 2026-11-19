@@ -10,7 +10,7 @@ export const site = {
   role: "software engineer",
   role2: "ML researcher",
   tagline:
-    "CS grad from UBC, incoming MSCS @ Columbia. I build in fintech, crypto and AI — systems where being fast and being correct are the same requirement.",
+    "MS CS (machine learning track) at Columbia, CS grad from UBC, building Fizz.bot. I work in fintech, crypto and AI — systems where being fast and being correct are the same requirement.",
   building: "Fizz.bot",
   buildingUrl: "https://fizz.bot/",
   email: "zixuank0287@outlook.com",
@@ -19,10 +19,66 @@ export const site = {
   resume: "/Alex_Kang_Resume.pdf",
 };
 
+/** What I'm building now — rendered by components/Building.tsx. */
+export const fizz = {
+  name: "Fizz.bot",
+  url: "https://fizz.bot/",
+  tagline: "All of crypto at your fingertips.",
+  pitch:
+    "One app on your phone for everything worth trading in crypto, with a social layer that gives every call skin in the game. It's the app I want as a trader myself, and I get to build all of it: the mobile app, the Rust services behind it, and the real-time feeds.",
+  features: [
+    {
+      label: "trade",
+      text: "Prediction markets, perps, spot and memecoins, side by side instead of across four apps.",
+    },
+    {
+      label: "social",
+      text: "Follow traders by what they actually trade, not by what they post.",
+    },
+    {
+      label: "execution",
+      text: "Fast, reliable transactions — the part nobody notices until it breaks.",
+    },
+    {
+      label: "rewards",
+      text: "Referral rewards for everyone, to grow a community that lasts.",
+    },
+  ],
+  stack: "React Native · TypeScript · Rust · gRPC · Postgres · Redis",
+};
+
+export const fizzLesson = {
+  file: "alliance.md",
+  title: "We interviewed with Alliance. We didn't get in.",
+  intro: "It was a no — but we came out of it with some of the most important lessons we've learned so far.",
+  worked:
+    "the team. We're genuinely cohesive, and the partners called it out as a strength.",
+  missing:
+    "a vision sharp enough to answer three questions without hand-waving:",
+  questions: [
+    {
+      label: "demand",
+      text: "who wants this badly enough to switch from what they use today?",
+    },
+    {
+      label: "moat",
+      text: "what gets stronger for us over time and stays hard for anyone else to copy?",
+    },
+    {
+      label: "incumbents",
+      text: "when a large exchange sees it working, what stops them shipping the same features in a weekend?",
+    },
+  ],
+  takeaway:
+    "Cohesion gets you in the room. A clear answer on demand and moat is what gets you funded — that's the work now.",
+};
+
 export type Project = {
   name: string;
   blurb: string;
   stack: string;
+  /** Short tag above the title, e.g. the course and team size. */
+  context?: string;
   live?: string;
   repo?: string;
   terminal: { cmd: string; out: string[] };
@@ -76,6 +132,56 @@ export const projects: Project[] = [
   },
 ];
 
+/** Columbia course projects. Repos are private (course rules / proprietary
+ *  benchmark data), so these cards carry no links. */
+export const courseProjects: Project[] = [
+  {
+    name: "AssetOpsBench harness",
+    context: "HPML · team project with IBM Research",
+    stack: "Python · DSPy · Claude API · Qwen 3.5 · MCP · Docker",
+    blurb:
+      "AI agents kept failing IBM's maintenance benchmark, which asks them to count things across 1,076 work-order notes. I built our team's fix: label every note once, then have the model write code to do the counting. It beat IBM's reference agent on unseen scenarios and brought a small 9B open model up to frontier-model level.",
+    terminal: {
+      cmd: "harness eval --split test",
+      out: [
+        "→ 19 held-out scenarios",
+        "→ IBM reference agent: 0.458",
+        "✓ ours: 0.585 mean closeness",
+      ],
+    },
+  },
+  {
+    name: "Trader-strategy agent",
+    context: "LLM-Based Generative AI · team of 2",
+    stack: "Python · Claude Opus 5.5 · MCP · XGBoost · Dune SQL",
+    blurb:
+      "Every Solana memecoin trade is public — but not why a wallet buys. I built a Claude agent that studies a trader's history and writes their strategy down as a short checklist of readable rules, then tests it on weeks it never saw.",
+    terminal: {
+      cmd: "playbook learn --wallets 12",
+      out: [
+        "→ sniper bot: 96% / 94% P/R",
+        "→ humans: 70% / 69% P/R held-out",
+        "✓ beats single prompt on 10/12",
+      ],
+    },
+  },
+  {
+    name: "GPU kernels & profiling",
+    context: "HPML · solo",
+    stack: "CUDA C · cuBLAS · PyTorch · torch.profiler · T4 / A100",
+    blurb:
+      "Writing CUDA by hand: memory coalescing, a tiled matmul, and a FlashAttention-style attention kernel with online softmax that beat the cuBLAS version. Then profiling real training — mixed precision took DistilBERT fine-tuning from 141 to 38 ms a step.",
+    terminal: {
+      cmd: "./attention --n 2048 --d 64",
+      out: [
+        "→ naive 64.55 ms · cuBLAS 56.29 ms",
+        "✓ tiled + online softmax: 50.86 ms",
+        "→ checksums match: 623032.963",
+      ],
+    },
+  },
+];
+
 export type Role = {
   company: string;
   title: string;
@@ -95,9 +201,10 @@ export const experience: Role[] = [
     when: "May — Sep 2025",
     stack: "Python · PySpark · Keras · AWS",
     points: [
-      "Built a business classification system — fine-tuned transformer plus LightGBM, with focal loss for class imbalance — that improved F1 by 15% over the prior model.",
+      "Built a business classification system — fine-tuned transformer plus LightGBM, with focal loss and synthetic sampling for class imbalance — that improved F1 by 15% and accuracy by 12%.",
       "Built a PySpark pipeline consolidating 50M+ customer pricing records into annual product- and customer-level price-change metrics.",
-      "Added a Keras VAE that flags anomalies in those pricing records, plus a Tesseract OCR pipeline that pulls contract numbers out of scanned PDFs by spatial alignment and binary search.",
+      "Trained a Keras VAE anomaly detector on 300GB of those pricing records; it matched manual review and surfaced 10% of previously undetected anomalies.",
+      "Built a Tesseract OCR pipeline that parses 200+ mixed-format PDFs a month by spatial alignment and binary search, saving about 5 minutes of manual entry per document.",
     ],
   },
   {
@@ -109,9 +216,9 @@ export const experience: Role[] = [
     award:
       "Users generated 7 figures in profits, including a single $3M day on $MOTHER",
     points: [
-      "Led development of a profitable meme-coin trading system on Solana — the first automation software built on pump.fun.",
-      "Built a multi-threaded transaction handler on a thread pool that fills buy/sell orders in under 100ms, roughly 20× faster than manual execution.",
-      "Designed the gRPC and protobuf layer streaming to distributed clients, plus a statistical detector that flags anomalous launch patterns to keep users out of rug pulls.",
+      "Led development of a meme-coin trading system on Solana across pump.fun, Meteora and Raydium — the first automation software built on pump.fun — serving 200 users at $100K+ peak daily volume.",
+      "Built a multi-threaded transaction handler on a thread pool that fills buy/sell orders in under 100ms, roughly 20× faster than manual execution, and used Tokio Console to fix the deadlocks hanging 20% of users.",
+      "Designed the gRPC and protobuf layer streaming to 1,000+ concurrent clients, plus a statistical detector on launch patterns that caught 80% of scam tokens before users bought in.",
     ],
   },
   {
@@ -122,7 +229,7 @@ export const experience: Role[] = [
     stack: "C++ · C · Python",
     points: [
       "Rewrote sensor initialization as a multi-threaded pipeline, cutting start-up time by 40%.",
-      "Cut 20MB off build artifacts by resolving technical debt, and fixed the intermittent multi-threaded build failures that had been destabilizing the team's build server.",
+      "Cut build artifacts by 20MB (~65%) by resolving technical debt, and fixed the threading failures and deadlocks that had been destabilizing the team's build server.",
       "Built the C++ mocking infrastructure the team now tests against.",
     ],
   },
@@ -137,7 +244,7 @@ export const research: Role[] = [
     stack: "Multimodal LLMs · LoRA",
     points: [
       "Fine-tuned multimodal LLMs with LoRA adapters and a temporal sliding-window sampling strategy to detect mudslides from live railway video and sensor feeds.",
-      "Built environmental augmentations — rain intensity, fog density, debris — to cut false positives and harden recall across weather conditions.",
+      "Built environmental augmentations — rain intensity, fog density, debris — that cut false positives and raised recall by 7% in adverse weather.",
     ],
   },
   {
@@ -146,10 +253,11 @@ export const research: Role[] = [
     where: "Mentored by Shreyas (Amazon) & Kevin Zhu (UC Berkeley)",
     when: "Jun — Nov 2025",
     stack: "LLM reasoning · Bayesian methods",
-    award: "Accepted to the Agentic AI in the Wild workshop, ICLR 2026",
+    award:
+      "Published: CA-BED: Conversation-Aware Bayesian Experimental Design — ICLR 2026, Agentic AI in the Wild workshop",
     points: [
-      "Extended the Uncertainty of Thoughts framework for LLM information-seeking with Bayesian prior estimation.",
-      "Added multibranching to generalize beyond binary entropy-based splitting, plus likelihood caching over sentence-clustered questions.",
+      "Extended the Uncertainty of Thoughts framework for LLM information-seeking with Bayesian priors, beating it by 17.0% and 22.5% on two benchmarks.",
+      "Added multi-branching answer planning — 89.2% on 20 Questions, with dialogs cut from 12.8 to 8.8 turns — plus likelihood caching over sentence-clustered questions to skip redundant model calls.",
     ],
   },
 ];
@@ -181,7 +289,7 @@ export const skillGroups = [
   {
     label: "machine learning",
     items:
-      "Transformers, LoRA fine-tuning, VAEs, CNNs, SGD, MLE/MAP estimation, PCA/t-SNE",
+      "Transformers, LoRA fine-tuning, quantization, mixed precision, VAEs, CNNs, MLE/MAP estimation, PCA/t-SNE",
   },
   {
     label: "frameworks",
@@ -193,7 +301,7 @@ export const skillGroups = [
   },
   {
     label: "ai tooling",
-    items: "Claude Code, Codex, Cursor, MCP servers, agent skills, prompt & context engineering",
+    items: "Claude API, MCP servers, DSPy, LangChain, Claude Code, Codex, Cursor, agent sandboxing, context engineering",
   },
   {
     label: "interests",
@@ -204,8 +312,8 @@ export const skillGroups = [
 export const education = [
   {
     school: "Columbia University",
-    degree: "M.S. Computer Science",
-    when: "Starting Sep 2026",
+    degree: "M.S. Computer Science · Machine Learning track",
+    when: "Sep 2026 — Dec 2027 (expected)",
     where: "New York, NY",
     note: null as string | null,
   },
@@ -215,5 +323,37 @@ export const education = [
     when: "Sep 2020 — May 2026",
     where: "Vancouver, BC",
     note: "GPA 3.76 / 4.0",
+  },
+];
+
+export const coursework = [
+  {
+    label: "columbia · fall 2026",
+    items: [
+      "High Performance Machine Learning",
+      "LLM-Based Generative AI",
+      "Designing Production Agentic Systems",
+      "Databases",
+    ],
+  },
+  {
+    label: "columbia · spring 2027",
+    items: [
+      "Natural Language Processing",
+      "Artificial Intelligence",
+      "Applied Deep Learning",
+      "Computer Vision II: Learning",
+      "Advanced Spoken Language Processing",
+    ],
+  },
+  {
+    label: "ubc",
+    items: [
+      "Advanced Algorithm Design",
+      "Advanced Machine Learning",
+      "Parallel Computation",
+      "Computer Hardware & Operating Systems",
+      "Advanced Relational Databases",
+    ],
   },
 ];
