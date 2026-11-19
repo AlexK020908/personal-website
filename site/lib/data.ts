@@ -10,7 +10,7 @@ export const site = {
   role: "software engineer",
   role2: "ML researcher",
   tagline:
-    "MS CS (machine learning track) at Columbia, CS grad from UBC, building Fizz.bot. I work in fintech, crypto and AI — systems where being fast and being correct are the same requirement.",
+    "MS CS (machine learning track) at Columbia, CS grad from UBC. I work in fintech, crypto and AI — systems where being fast and being correct are the same requirement.",
   building: "Fizz.bot",
   buildingUrl: "https://fizz.bot/",
   email: "zixuank0287@outlook.com",
@@ -19,13 +19,13 @@ export const site = {
   resume: "/Alex_Kang_Resume.pdf",
 };
 
-/** What I'm building now — rendered by components/Building.tsx. */
+/** Fizz.bot and what it taught me — rendered by components/Building.tsx. */
 export const fizz = {
   name: "Fizz.bot",
   url: "https://fizz.bot/",
   tagline: "All of crypto at your fingertips.",
   pitch:
-    "One app on your phone for everything worth trading in crypto, with a social layer that gives every call skin in the game. It's the app I want as a trader myself, and I get to build all of it: the mobile app, the Rust services behind it, and the real-time feeds.",
+    "One app on your phone for everything worth trading in crypto, with a social layer that gave every call skin in the game. It was the app I wanted as a trader myself, and I got to build all of it with a small team: the mobile app, the Rust services behind it, and the real-time feeds.",
   features: [
     {
       label: "trade",
@@ -50,9 +50,10 @@ export const fizz = {
 export const fizzLesson = {
   file: "alliance.md",
   title: "We interviewed with Alliance. We didn't get in.",
-  intro: "It was a no — but we came out of it with some of the most important lessons we've learned so far.",
+  intro:
+    "It was a no — but it came with the most important lessons of the whole project.",
   worked:
-    "the team. We're genuinely cohesive, and the partners called it out as a strength.",
+    "the team. We were genuinely cohesive, and the partners called it out as a strength.",
   missing:
     "a vision sharp enough to answer three questions without hand-waving:",
   questions: [
@@ -70,7 +71,7 @@ export const fizzLesson = {
     },
   ],
   takeaway:
-    "Cohesion gets you in the room. A clear answer on demand and moat is what gets you funded — that's the work now.",
+    "We're no longer working on Fizz. What I'm taking with me: I want to build inside a company — products with real demand and a real moat that help it beat its competitors.",
 };
 
 export type Project = {

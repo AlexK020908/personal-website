@@ -39,7 +39,7 @@ export default function About() {
                 .
               </p>
               <p>
-                Right now I&apos;m building{" "}
+                Most recently I built{" "}
                 <a
                   href={site.buildingUrl}
                   target="_blank"
@@ -48,11 +48,12 @@ export default function About() {
                 >
                   Fizz.bot
                 </a>{" "}
-                — all of crypto at your fingertips. More on that{" "}
-                <a href="#building" className="sweep text-violet">
+                with a small team — all of crypto at your fingertips. More on
+                that{" "}
+                <a href="#fizz" className="sweep text-violet">
                   above
                 </a>
-                , including what a VC rejection taught us.
+                , including what it taught me and what I want to do next.
               </p>
               <p>
                 I keep coming back because I genuinely love this — I trade

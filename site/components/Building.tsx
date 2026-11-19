@@ -6,15 +6,11 @@ import SectionHeading from "./SectionHeading";
 export default function Building() {
   return (
     <section
-      id="building"
-      aria-labelledby="building-heading"
+      id="fizz"
+      aria-labelledby="fizz-heading"
       className="mx-auto max-w-6xl px-5 pb-24 sm:px-8 sm:pb-32 lg:px-10"
     >
-      <SectionHeading
-        id="building"
-        label="building"
-        action={{ text: "fizz.bot", href: fizz.url }}
-      />
+      <SectionHeading id="fizz" label="fizz.bot" />
 
       <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         {/* ---- the product ---- */}

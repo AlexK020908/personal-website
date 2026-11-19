@@ -117,17 +117,15 @@ export default function Hero() {
             />
           </div>
 
-          {/* currently building badge */}
+          {/* availability badge */}
           <a
-            href={site.buildingUrl}
-            target="_blank"
-            rel="noreferrer"
+            href="#contact"
             className="group relative z-10 mx-auto -mt-5 flex w-fit items-center gap-2.5 border border-line2 bg-panel px-4 py-2.5 text-xs text-muted transition-colors hover:border-violet sm:text-sm"
           >
             <span className="inline-block h-2.5 w-2.5 shrink-0 bg-pink" />
-            Currently building
+            Open to
             <span className="text-fg transition-colors group-hover:text-violet">
-              {site.building}
+              summer 2027 internships
             </span>
             <span className="cursor-blink text-violet">_</span>
           </a>

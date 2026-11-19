@@ -5,7 +5,7 @@ import { CloseIcon, MenuIcon } from "./icons";
 
 const links = [
   { id: "home", label: "home" },
-  { id: "building", label: "building" },
+  { id: "fizz", label: "fizz.bot" },
   { id: "projects", label: "projects" },
   { id: "experience", label: "experience" },
   { id: "skills", label: "skills" },
